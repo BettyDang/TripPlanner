@@ -1,17 +1,29 @@
-const moongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-const UserShecma = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
     {
-        name: String,
+        name:{
+            type: String,
+            requires: true,
+            trim: true
+        },
         email: {
             type: String,
+            requires: true,
             unique: true,
-            password: String
+            lowercase: true,
+            trim: true
+        },
+        password: {
+            type: String,
+            requires: true,
         }
+    },
+    {
+        timestamps: true
     }
-
 );
 
-const User = moongoose.model("User", UserShecma);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
