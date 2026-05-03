@@ -31,7 +31,7 @@ The goal of this project is to provide a simple and interactive way to plan trip
 
 ### 🔐 Login Page
 
-![Login](./screenshots/login.png)
+![Login](./screenshots/Login.png)
 
 ### 🔐 SignUp Page
 
