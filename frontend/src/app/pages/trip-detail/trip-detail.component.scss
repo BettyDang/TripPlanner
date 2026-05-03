@@ -1,0 +1,283 @@
+.days {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+  
+.day-card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.2s ease;
+}
+  
+.day-card:hover {
+    transform: translateY(-2px);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.day-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.day-header span {
+    font-size: 13px;
+    color: #777;
+}
+
+.activities {
+    min-height: 40px;
+    margin-bottom: 10px;
+}
+
+.empty {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.add-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #6c63ff;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background: #574fd6;
+}
+
+.days {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.day-card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.2s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-2px);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.day-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.day-header span {
+    font-size: 13px;
+    color: #777;
+}
+
+.activities {
+    min-height: 40px;
+    margin-bottom: 10px;
+}
+
+.empty {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.add-btn {
+    padding: 8px 12px;
+    border: 2px solid #6c63ff;
+    border-radius: 8px;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background: #a5a0ec;
+}
+
+.banner {
+    position: relative;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px;
+}
+  
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: white;
+    }
+
+.banner-overlay h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.banner-overlay p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.activity-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+  
+.activity-form input {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.success-msg {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 20px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .error-msg {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 20px;
+    text-align: center;
+  }
+
+.activity-item {
+    background: #f5f6fa;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+  }
+
+  .activity-item {
+    background: #f5f6fa;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .activity-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .actions {
+    margin-top: 6px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .actions button {
+    border: 2px solid #0bdcf85d;
+    background: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .actions button:hover {
+    background: #0baabe5d;
+  }
+
+  .status {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  /* Planned */
+  .status.Planned {
+    background: #74b9ff;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Pending */
+  .status.Pending {
+    background: #FE9705;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Completed */
+  .status.Completed {
+    background: #1ca700;
+    color: white;
+    font-weight: bold;
+  }
+
+  .actions-btn {
+    margin-top: 6px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .save-btn {
+    padding: 8px 12px;
+    border: 2px solid #12a7045d;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s;
+    background: white;
+  }
+
+  .save-btn:hover {
+    background: #12a7045d;
+  }
+
+  .cancel-btn {
+    padding: 8px 12px;
+    border: 2px solid #e07e7e;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s;
+    background: white;
+  }
+
+  .cancel-btn:hover {
+    background: #e07e7e;
+  }

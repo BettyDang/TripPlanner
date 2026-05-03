@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="grid">
+    <ng-container *ngIf="isLoading">
+      <p>Loading...</p>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoading"></ng-container>
+
+
+    <ng-container *ngIf="!isLoading && trips.length > 0; else empty">
+
+    <!-- TRIP CARD -->
+    <div *ngFor="let trip of trips" class="card" (click)="handleTripClick(trip._id)">
+      <img [src]="trip.image" />
+
+      <div class="overlay">
+        <h3>{{ trip.title }}</h3>
+        <p class="dates">
+          {{ trip.startDate | date:'MMM d' }} - 
+          {{ trip.endDate | date:'MMM d' }}
+        </p>
+      </div>
+
+      <button 
+      class="delete-btn"
+      (click)="deleteTrip(trip._id, $event)">
+      Delete
+      </button>
+
+
+    </div>
+  </ng-container>
+
+  <ng-template #empty>
+    <p class="empty"> No trips yet</p>
+  </ng-template>
+
+    <!-- ADD TRIP -->
+    <a class="card add" [class.disable]="!isLoggedIn" (click)="handleAddClick($event)">
+      + Add Trip
+    </a>
+
+  </div>
+
+</div>

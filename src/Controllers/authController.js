@@ -3,9 +3,13 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const generateToken = (id, email) => {
-    const jwtSecret = "secretkey";
+    const jwtSecret = process.env.JWT_SECRET;
 
-    return jwt.sign({id, email}, jwtSecret, {expiresIn: "1d"});
+    return jwt.sign(
+        { id, email },
+        jwtSecret,
+        { expiresIn: "1d" }
+    );
 }
 
 const serializeUser = (user) => ({

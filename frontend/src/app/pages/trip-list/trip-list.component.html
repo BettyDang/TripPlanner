@@ -1,0 +1,9 @@
+<h2>Your Trips</h2>
+
+<div class="grid">
+  <div *ngFor="let trip of trips" class="card" (click)="goToTrip(trip._id)">
+    <img [src]="trip.image" />
+    <h3>{{ trip.title }}</h3>
+    <p>{{ trip.startDate | date }} - {{ trip.endDate | date }}</p>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<div class="trip-detail-container">
+
+    <p *ngIf="!trip">Loading trip...</p>
+  
+    <!-- HEADER -->
+    <div *ngIf="trip" class="banner">
+      <img [src]="trip.image" />
+      <div class="banner-overlay">
+        <h1>{{ trip.title }}</h1>
+        <p>
+          {{ trip.startDate | date:'MMM d, y' }} -
+          {{ trip.endDate | date:'MMM d, y' }}
+        </p>
+      </div>
+    </div>
+  
+    <!-- MESSAGE -->
+    <div *ngIf="message" [ngClass]="isError ? 'error-msg' : 'success-msg'">
+      {{ message }}
+    </div>
+  
+    <!-- DAYS -->
+    <div *ngIf="trip" class="days">
+  
+      <div *ngFor="let d of days" class="day-card">
+  
+        <!-- HEADER -->
+        <div class="day-header">
+          <h2>Day {{ d.day }}</h2>
+          <span>{{ d.date | date:'fullDate' }}</span>
+        </div>
+  
+        <!-- ACTIVITIES -->
+        <ng-container *ngIf="groupedActivities[d.date.toDateString()]?.length; else empty">
+  
+          <div *ngFor="let activity of groupedActivities[d.date.toDateString()]" class="activity-item">
+  
+            <div class="activity-header">
+              <strong>{{ activity.title }}</strong>
+              <span class="status" [ngClass]="activity.Status || 'Planned'">
+                {{ (activity.Status || 'Planned') | titlecase }}
+              </span>
+            </div>
+  
+            <p>{{ activity.description }}</p>
+
+  
+            <!-- ACTIONS -->
+            <div class="actions">
+              <button type="button" (click)="editActivity(activity)">Edit</button>
+              <button type="button" (click)="deleteActivity(activity._id)">Delete</button>
+            </div>
+  
+            <!-- EDIT FORM -->
+            <div *ngIf="editingActivityId === activity._id" class="activity-form">
+  
+              <input [(ngModel)]="editForm.title" />
+              <input [(ngModel)]="editForm.description" />
+  
+              <select [(ngModel)]="editForm.Status">
+                <option value="Planned">Planned</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+              </select>
+
+            <div class="actions-btn">
+                <button class="save-btn" (click)="updateActivity(activity._id)">Save</button>
+                <button class="cancel-btn" (click)="editingActivityId = null">Cancel</button>
+            </div>
+  
+            </div>
+  
+          </div>
+  
+        </ng-container>
+  
+        <!-- EMPTY STATE -->
+        <ng-template #empty>
+          <p class="empty">No activities yet</p>
+        </ng-template>
+  
+        <!-- ADD BUTTON -->
+        <button class="add-btn" (click)="openForm(d)">+ Add Activity</button>
+  
+        <!-- CREATE FORM -->
+        <div *ngIf="showFormForDay === d.day" class="activity-form">
+  
+          <input [(ngModel)]="newActivity.title" placeholder="Title" />
+          <input [(ngModel)]="newActivity.description" placeholder="Description" />
+  
+          <button 
+            class="add-btn"
+            (click)="createActivity()"
+            [disabled]="!newActivity.title || !newActivity.date">
+            Save
+          </button>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>

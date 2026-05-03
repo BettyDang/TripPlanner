@@ -1,0 +1,29 @@
+<nav class="navbar">
+
+  <div class="logo" routerLink="/">
+    ✈️ TripPlanner
+  </div>
+
+
+  <div class="nav-links">
+
+    <a routerLink="/" routerLinkActive="active">Home</a>
+
+    <!-- when logged -->
+    <ng-container *ngIf="isLoggedIn; else loggedOut">
+      <!-- <a routerLink="/trips" routerLinkActive="active">Trips</a> -->
+
+      <span class="welcome">Hello, {{ userName }}</span>
+
+      <button class="logout" (click)="logout()">Logout</button>
+    </ng-container>
+
+    <!-- When not logged -->
+    <ng-template #loggedOut>
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+      <a routerLink="/register" routerLinkActive="active">Register</a>
+    </ng-template>
+
+  </div>
+
+</nav>
