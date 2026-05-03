@@ -182,7 +182,7 @@ PORT=
 
 ## 👨‍💻 Author
 
-Your Name
+Betty Dang
 Course: Trends in Technology (W2026)
 
 ---
