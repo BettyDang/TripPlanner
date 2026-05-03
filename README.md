@@ -9,6 +9,35 @@ The goal of this project is to provide a simple and interactive way to plan trip
 
 ---
 
+### Key Screens:
+
+* 🏠 Home page (Trip list)
+* 📄 Trip detail page (daily planning)
+* ➕ Add activity form
+* 🔐 Authentication (Login/Register)
+
+## 🖼️ Application Preview
+
+### 🏠 Home Page
+![Trip Planner Home](./screenshots/MainPage.png)
+
+### 📄 Trip Page
+
+![Trip Details](./screenshots/Planning.png)
+
+### ➕ Add Activity
+
+![Add Activity](./screenshots/AddTrip.png)
+
+### 🔐 Login Page
+
+![Login](./screenshots/login.png)
+
+### 🔐 SignUp Page
+
+![SignUp](./screenshots/Signup.png)
+
+
 ## 🚀 Features
 
 * 🔐 User Authentication (JWT)
