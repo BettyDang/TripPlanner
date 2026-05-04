@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { SocketService } from '../../services/socket';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-trip-detail',
@@ -64,7 +65,7 @@ export class TripDetailComponent implements OnInit {
 
     const token = localStorage.getItem('token');
 
-    this.http.get(`http://localhost:3000/trips/${id}`, {
+    this.http.get(`${environment.apiUrl}/trips/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -123,7 +124,7 @@ export class TripDetailComponent implements OnInit {
     const token = localStorage.getItem('token');
   
     this.http.post(
-      `http://localhost:3000/activity/trips/${this.trip._id}/activities`,
+      `${environment.apiUrl}/activity/trips/${this.trip._id}/activities`,
       {
         title: this.newActivity.title,
         description: this.newActivity.description,
@@ -170,7 +171,7 @@ export class TripDetailComponent implements OnInit {
     if (!isPlatformBrowser(this.platformId)) return;
     const token = localStorage.getItem('token');
   
-    this.http.get(`http://localhost:3000/activity/trips/${tripId}/activities`, {
+    this.http.get(`${environment.apiUrl}/activity/trips/${tripId}/activities`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -214,7 +215,7 @@ export class TripDetailComponent implements OnInit {
     console.log("Sending editForm: ", this.editForm);
   
     this.http.put(
-      `http://localhost:3000/activity/activities/${id}`,
+      `${environment.apiUrl}/activity/activities/${id}`,
       this.editForm,
       {
         headers: {
@@ -244,7 +245,7 @@ export class TripDetailComponent implements OnInit {
   if (!confirm('Are you sure?')) return;
 
   this.http.delete(
-    `http://localhost:3000/activity/activities/${id}`,
+    `${environment.apiUrl}/activity/activities/${id}`,
     {
       headers: {
         Authorization: `Bearer ${token}`

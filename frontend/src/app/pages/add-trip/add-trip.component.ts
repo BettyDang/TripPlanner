@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-add-trip',
@@ -21,7 +22,7 @@ export class AddTripComponent {
   createTrip() {
     const token = localStorage.getItem('token');
 
-    this.http.post('http://localhost:3000/trips', {
+    this.http.post(`${environment.apiUrl}/trips`, {
       title: this.title,
       destination: this.destination,
       image: this.image,

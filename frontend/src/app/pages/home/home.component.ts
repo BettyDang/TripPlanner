@@ -139,25 +139,5 @@ export class HomeComponent implements OnInit {
 
 
   
-
-  // getTrips() {
-  //   if (!isPlatformBrowser(this.platformId)) {
-  //     return; 
-  //   }
-
-  //   const token = localStorage.getItem('token');
-
-  //   this.http.get('http://localhost:3000/trips', {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`
-  //     }
-  //   }).subscribe({
-  //     next: (res: any) => {
-  //       this.trips = res.data.trips;
-  //       console.log("Trips: ", this.trips);
-  //     },
-  //     error: (err) => console.error(err)
-  //   });
-  // }
 }
 
