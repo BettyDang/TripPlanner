@@ -1,3 +1,0 @@
-export const environment = {
-    apiUrl: 'https://tripplanner-1-e9wr.onrender.com'
-};
