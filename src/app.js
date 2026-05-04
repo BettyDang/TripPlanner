@@ -9,7 +9,10 @@ const app = express();
 //app.use(cors());
 
 app.use(cors({
-    origin: "http://localhost:4200"
+    origin: [
+    "http://localhost:4200",
+    "https://tripplanner-1-e9wr.onrender.com"
+    ]
   }));
 
 app.use(express.json());
