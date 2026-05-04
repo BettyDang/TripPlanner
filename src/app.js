@@ -11,7 +11,8 @@ const app = express();
 app.use(cors({
     origin: [
     "http://localhost:4200",
-    "https://tripplanner-1-e9wr.onrender.com"
+    "https://tripplanner-1-e9wr.onrender.com",
+    "https://tripplanner-cutk.onrender.com"
     ]
   }));
 
