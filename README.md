@@ -162,12 +162,6 @@ http://localhost:4200
 
 ---
 
-## 📽️ Demo
-
-👉 [Add your video link here]
-
----
-
 ## 📄 Environment Variables
 
 Make sure to configure:
