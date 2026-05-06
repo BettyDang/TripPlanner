@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
-    //const mongoUri = "mongodb+srv://TripDB:w81gKwOUw20y5K72@trip.kgjxaox.mongodb.net/?appName=Trip";
     const mongoUri = process.env.MONGO_URI;
 
     if (!mongoUri) {
