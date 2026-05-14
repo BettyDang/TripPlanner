@@ -128,7 +128,7 @@ http://localhost:4200
 * Backend deployed on Render
 * Frontend deployed on Render
 
-👉 Live App: [https://tt4-2930-be-1-7hg5.onrender.com]
+👉 Live App: [https://tripplanner-1-e9wr.onrender.com]
 
 ---
 
